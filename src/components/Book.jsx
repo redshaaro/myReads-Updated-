@@ -1,6 +1,6 @@
 import React from "react";
 
-const Book = ({ book, changeShelf,category }) => {
+const Book = ({ book, changeShelf }) => {
   const updateShelf = (e) => {
     changeShelf(book, e.target.value);
   };
@@ -20,11 +20,8 @@ const Book = ({ book, changeShelf,category }) => {
             
           ></div>
           <div className="book-shelf-changer">
-            <select
-              onChange={updateShelf}
-              value={book.shelf ? book.shelf : "none"}
-            >
-              <option value="none" disabled>
+           <select defaultValue={book.shelf ? book.shelf :book.shelf="none"} onChange={updateShelf} >
+              <option  disabled>
                 Move to...
               </option>
               <option value="currentlyReading">Currently Reading</option>
